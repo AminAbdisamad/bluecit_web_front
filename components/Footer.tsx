@@ -93,7 +93,7 @@ export default function Footer() {
           <ul>
             <h4>Insights</h4>
             <li>
-              <a>Blog</a>
+              <a>Blog(s)</a>
             </li>
             <li>
               <Link href='/contacts'>Contact Us</Link>
