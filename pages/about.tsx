@@ -35,7 +35,7 @@ const AboutStyles = styled.div`
 
 const headerContent = {
   title: "About Us",
-  text: "BlueCIT is a professional experienced and innovative internet security & Software development consulting fırm that is dedicated to provide high quality services, strategic solutions, technical consulting, and data protection to businesses and organizations.",
+  text: "BlueCIT is a professional, experienced, innovative software development and internet security fırm, that provides high-quality services, strategic solutions, technical consulting, and data protection to businesses and organizations.",
 };
 const About = () => {
   return (
@@ -45,25 +45,23 @@ const About = () => {
         <div className='statement'>
           <h1>Our Mission </h1>
           <p>
-            To position our company on the front line lead of the software
-            development and cybersecurity sector and knowledge in the horn of
-            Africa. engage constant learning to increase our efficiency and To
-            enhance promote our client’s capabilities to operate their
-            businesses in a safeguarded and fraud malware free environment by
-            providing excellent technical assistance and remarkable consulting
-            services with inflexible the highest level of integrity.
+            To position our company on the front line of the software
+            development and cybersecurity sector in the horn of Africa. Enhance
+            our client’s capabilities to operate their businesses in a
+            safeguarded and fraud-free environment by providing sophisticated
+            systems, applications, and professional consulting services with
+            inflexible integrity.
           </p>
         </div>
         <div className='statement'>
           <h1>Our Vision </h1>
 
           <p>
-            To be a potential partner, customer-oriented, up-to-date, and
-            innovative world class software development and internet security
-            providing company. that helps elevates business and organizational
-            data and knowledge security awareness by equipping them with
-            knowledge based security strategic solutions with eminent
-            efficiency.
+            To be a potential partner, customer-oriented, and innovative
+            world-class software development and internet security company. To
+            assist businesses and organizations elevate their data and security
+            awareness by equipping them with the latest technology and strategic
+            solutions.
           </p>
         </div>
       </div>

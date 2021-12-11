@@ -79,12 +79,13 @@ export default function HomeServices() {
           </div>
           <div className='cardRight'>
             <h2>
-              <span>Network</span> Visibility Assessment
+              <span> Vulnerability</span> Management
             </h2>
             <p>
-              Network Visibility Assessments provides a proactive approach to IT
-              security, helping you to detect your network’s weaknesses so you
-              can increase and optimize your security measures..
+              Our experts help you go beyond basic scanning, define key risk
+              areas, analyze scan results with intelligence-driven context,
+              customize reporting for clear visibility, and coordinate
+              remediation activities.
             </p>
             <Link href='/services'>
               <a className='btn'>Learn More</a>
