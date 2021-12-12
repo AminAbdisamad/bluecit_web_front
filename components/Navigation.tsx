@@ -2,10 +2,6 @@ import * as React from "react";
 import { useMediaQuery } from "react-responsive";
 import { slide as Menu } from "react-burger-menu";
 import { SCREENS } from "./Responsive";
-// import { Close as CloseIcon } from "@styled-icons/evil/";
-// import { Menu as OpenIcon } from "@styled-icons/feather/";
-// import styled from "styled-components";
-// import { Modal } from "antd";
 import { mobileNavStyles } from "styles/MobileNavStyles";
 import NavLinks, { NavStyles, MobileStyles } from "./NavLinks";
 
