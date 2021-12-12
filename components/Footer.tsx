@@ -131,7 +131,7 @@ export default function Footer() {
       <div className='copyright'>
         <p>
           © 2018 - {footerYear.getFullYear()} <span>BlueCIT</span>. All Rights
-          Reserved.
+          Reserved
         </p>
       </div>
     </FooterStyles>
