@@ -1,9 +1,11 @@
 import type { AppProps } from "next/app";
 import * as React from "react";
+import { DefaultSeo } from "next-seo";
 import Page from "../components/Page";
 import { ToggleThemeStateProvider } from "../utils/globalState";
 import withData from "../utils/withData";
 import { GlobalStyles } from "styles/ThemeConfig";
+import SEO from "../next-seo.config";
 import "antd/dist/antd.css";
 // import "@/styles/antd.less";
 
@@ -25,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ToggleThemeStateProvider>
+      <DefaultSeo {...SEO} />
       <GlobalStyles />
       <Page>
         <Component {...pageProps} />

@@ -34,6 +34,10 @@ const ContactStyle = styled.p`
     padding-left: 1rem;
   }
 `;
+
+const CustomeLink = styled(Link)`
+  pointer: cursor;
+`;
 const footerYear = new Date();
 export default function Footer() {
   const [countMessage, setCountMessage] = React.useState(0);
@@ -58,13 +62,12 @@ export default function Footer() {
     <FooterStyles>
       <div className='footer'>
         <div>
-          <a>
+          <CustomeLink href='/' passHref>
             <Logo width='52%' fill={darkMode.value ? "white" : "#03256C"} />
-          </a>
-
+          </CustomeLink>
           <ContactStyle>
             <EmailOutline size='35' />
-            <a type='email'>contact@bluecit.io</a>
+            <a href='mailto:contact@bluecit.io'>contact@bluecit.io</a>
           </ContactStyle>
         </div>
         <div className='footerMenu'>
@@ -74,7 +77,7 @@ export default function Footer() {
               <Link href='about'>BlueCIT</Link>
             </li>
             <li>
-              <a>Careers</a>
+              <a href='#'>Careers</a>
             </li>
           </ul>
         </div>
@@ -82,7 +85,7 @@ export default function Footer() {
           <ul>
             <h4>Products</h4>
             <li>
-              <a>RAADI App</a>
+              <a href='#'>RAADI App</a>
             </li>
             <li>
               <Link href='/services'>Services</Link>
@@ -93,7 +96,7 @@ export default function Footer() {
           <ul>
             <h4>Insights</h4>
             <li>
-              <a>Blog</a>
+              <a href='#'>Blog</a>
             </li>
             <li>
               <Link href='/contacts'>Contact Us</Link>

@@ -79,7 +79,7 @@ function Header() {
         </a>
       </Link>
       <Navigation />
-      <ThemeLink>
+      <ThemeLink href=''>
         <ToggleThemeIcon onClick={darkMode.toggle} size='40' />
       </ThemeLink>
     </HeaderStyle>

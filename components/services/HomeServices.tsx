@@ -25,7 +25,7 @@ export default function HomeServices() {
               simplify transactions processes, by connecting customers to
               consumers using the latest technologies.
             </p>
-            <Link href='/services'>
+            <Link href='/services' passHref>
               <a className='btn'>Learn More</a>
             </Link>
           </div>
@@ -44,8 +44,10 @@ export default function HomeServices() {
               strategy, operational management, and provide sustainable,
               transformative business solutions
             </p>
-            <Link href='/services'>
-              <a className='btn'>Learn More</a>
+            <Link href='/services' passHref>
+              <a className='btn' title='BlueCIT Digital Transformation Service'>
+                Learn More
+              </a>
             </Link>
           </div>
         </div>
@@ -65,8 +67,10 @@ export default function HomeServices() {
               expertise to enhance your security posture, reduce your risk, and
               improve your operational efficiency..
             </p>
-            <Link href='/services'>
-              <a className='btn'>Learn More</a>
+            <Link href='/services' passHref>
+              <a className='btn' title='Bluecit Penetration Testing Service'>
+                Learn More
+              </a>
             </Link>
           </div>
         </div>
@@ -87,8 +91,13 @@ export default function HomeServices() {
               customize reporting for clear visibility, and coordinate
               remediation activities.
             </p>
-            <Link href='/services'>
-              <a className='btn'>Learn More</a>
+            <Link href='/services' passHref>
+              <a
+                className='btn'
+                title='Bluecit Vulnerability Management Service'
+              >
+                Learn More
+              </a>
             </Link>
           </div>
         </div>
