@@ -35,9 +35,6 @@ const ContactStyle = styled.p`
   }
 `;
 
-const CustomeLink = styled(Link)`
-  pointer: cursor;
-`;
 const footerYear = new Date();
 export default function Footer() {
   const [countMessage, setCountMessage] = React.useState(0);
@@ -62,9 +59,12 @@ export default function Footer() {
     <FooterStyles>
       <div className='footer'>
         <div>
-          <CustomeLink href='/' passHref>
-            <Logo width='52%' fill={darkMode.value ? "white" : "#03256C"} />
-          </CustomeLink>
+          <Link href='/' passHref>
+            <a title='BlueCIT Logo'>
+              <Logo width='52%' fill={darkMode.value ? "white" : "#03256C"} />
+            </a>
+          </Link>
+
           <ContactStyle>
             <EmailOutline size='35' />
             <a href='mailto:contact@bluecit.io'>contact@bluecit.io</a>
@@ -96,7 +96,7 @@ export default function Footer() {
           <ul>
             <h4>Insights</h4>
             <li>
-              <a href='#'>Blog</a>
+              <Link href='#'>Blog</Link>
             </li>
             <li>
               <Link href='/contacts'>Contact Us</Link>
@@ -107,22 +107,28 @@ export default function Footer() {
       <div className='social'>
         <ul>
           <li>
-            <a href='https://github.com/bluecit'>
+            <a href='https://github.com/bluecit' title='BlueCIT Github'>
               <GithubWithCircle size='50' />
             </a>
           </li>
           <li>
-            <a href='https://twitter.com/BlueCIT_'>
+            <a href='https://twitter.com/BlueCIT_' title='BlueCIT Twitter'>
               <TwitterWithCircle size='50' />
             </a>
           </li>
           <li>
-            <a href='https://www.facebook.com/Bluecit.io'>
+            <a
+              href='https://www.facebook.com/Bluecit.io'
+              title='BlueCIT Facebook'
+            >
               <FacebookWithCircle size='50' />
             </a>
           </li>
           <li>
-            <a href='https://www.instagram.com/bluecit_io'>
+            <a
+              href='https://www.instagram.com/bluecit_io'
+              title='BlueCIT Instagram'
+            >
               <InstagramWithCircle size='50' />
             </a>
           </li>

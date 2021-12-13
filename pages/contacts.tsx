@@ -16,6 +16,7 @@ import {
 } from "antd";
 import styled from "styled-components";
 import { EmailOutline as Out } from "@styled-icons/evaicons-outline/";
+import Meta from "components/Meta";
 
 const { Title } = Typography;
 const { Option } = Select;
@@ -97,6 +98,7 @@ const Contacts = () => {
 
   return (
     <>
+      <Meta name='Contacts' path='/contacts' />
       <PageHeading title={headingContent.title} text={headingContent.text} />
       <Container>
         <CustomeTitle level={5}>

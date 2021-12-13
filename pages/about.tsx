@@ -1,3 +1,4 @@
+import Meta from "components/Meta";
 import styled from "styled-components";
 import PageHeading from "../components/PageHeading";
 const AboutStyles = styled.div`
@@ -39,33 +40,36 @@ const headerContent = {
 };
 const About = () => {
   return (
-    <AboutStyles>
-      <PageHeading title={headerContent.title} text={headerContent.text} />
-      <div className='main_text'>
-        <div className='statement'>
-          <h1>Our Mission </h1>
-          <p>
-            To position our company on the front line of the software
-            development and cybersecurity sector in the horn of Africa. Enhance
-            our client’s capabilities to operate their businesses in a
-            safeguarded and fraud-free environment by providing sophisticated
-            systems, applications, and professional consulting services with
-            inflexible integrity.
-          </p>
-        </div>
-        <div className='statement'>
-          <h1>Our Vision </h1>
+    <>
+      <Meta name='About Us' path='/about' />
+      <AboutStyles>
+        <PageHeading title={headerContent.title} text={headerContent.text} />
+        <div className='main_text'>
+          <div className='statement'>
+            <h1>Our Mission </h1>
+            <p>
+              To position our company on the front line of the software
+              development and cybersecurity sector in the horn of Africa.
+              Enhance our client’s capabilities to operate their businesses in a
+              safeguarded and fraud-free environment by providing sophisticated
+              systems, applications, and professional consulting services with
+              inflexible integrity.
+            </p>
+          </div>
+          <div className='statement'>
+            <h1>Our Vision </h1>
 
-          <p>
-            To be a potential partner, customer-oriented, and innovative
-            world-class software development and internet security company. To
-            assist businesses and organizations elevate their data and security
-            awareness by equipping them with the latest technology and strategic
-            solutions.
-          </p>
+            <p>
+              To be a potential partner, customer-oriented, and innovative
+              world-class software development and internet security company. To
+              assist businesses and organizations elevate their data and
+              security awareness by equipping them with the latest technology
+              and strategic solutions.
+            </p>
+          </div>
         </div>
-      </div>
-    </AboutStyles>
+      </AboutStyles>
+    </>
   );
 };
 

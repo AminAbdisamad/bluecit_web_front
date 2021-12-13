@@ -1,6 +1,7 @@
 import ServiceComponent from "../components/services/Services";
 
 import PageHeading from "../components/PageHeading";
+import Meta from "components/Meta";
 
 const headingContent = {
   title: "Our Services",
@@ -36,6 +37,7 @@ const servicesContent = [
 const ServicesPage = () => {
   return (
     <>
+      <Meta name='Services' path='/services' />
       <PageHeading title={headingContent.title} text={headingContent.text} />
       <div>
         {servicesContent.map((service, i) => (

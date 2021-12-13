@@ -74,12 +74,16 @@ function Header() {
   return (
     <HeaderStyle className={headerColor ? "active" : ""}>
       <Link href='/'>
-        <a style={{ paddingLeft: "4rem", paddingTop: "1rem" }}>
+        <a
+          style={{ paddingLeft: "4rem", paddingTop: "1rem" }}
+          title='BlueCIT Logo'
+          href=''
+        >
           <Logo width='50%' fill={darkMode.value ? "white" : "#03256C"} />
         </a>
       </Link>
       <Navigation />
-      <ThemeLink href=''>
+      <ThemeLink title='Toggle Theme'>
         <ToggleThemeIcon onClick={darkMode.toggle} size='40' />
       </ThemeLink>
     </HeaderStyle>

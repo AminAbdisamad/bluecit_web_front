@@ -1,6 +1,9 @@
+import Meta from "components/Meta";
+
 const Productspage = () => {
   return (
     <>
+      <Meta name='Products' path='/products' />
       <h1>Products</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
