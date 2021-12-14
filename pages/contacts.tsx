@@ -123,7 +123,7 @@ const Contacts = () => {
         >
           <Form.Item
             name='what_can_we_help_you_with'
-            label='What can we help you with? What can we help you with?'
+            label='What can we help you with?'
             rules={[{ required: true, message: "This field is required" }]}
           >
             <Input.TextArea showCount maxLength={200} />
