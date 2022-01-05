@@ -1,22 +1,12 @@
+import * as React from "react";
+import gql from "graphql-tag";
+import { useMutation } from "@apollo/client";
 import PageHeading from "../components/PageHeading";
-import {
-  Divider,
-  Typography,
-  Form,
-  Input,
-  InputNumber,
-  Cascader,
-  Select,
-  Row,
-  Col,
-  Checkbox,
-  Button,
-  AutoComplete,
-  Steps,
-} from "antd";
+import { Divider, Typography, Form, Input, Select, Button, Steps } from "antd";
 import styled from "styled-components";
 import { EmailOutline as Out } from "@styled-icons/evaicons-outline/";
 import Meta from "components/Meta";
+import Router from "next/router";
 
 const { Title } = Typography;
 const { Option } = Select;
@@ -33,6 +23,31 @@ const CustomeForm = styled(Form)`
     font-size: 1.5rem;
   }
 `;
+
+const CREATE_CONTACT_FORM = gql`
+  mutation CREATE_CONTACT_FORM(
+    $name: String!
+    $email: String!
+    $budget: String!
+    $description: String!
+    $phone: String
+    $howDidYouHearAboutUs: String
+  ) {
+    createContactForm(
+      data: {
+        name: $name
+        email: $email
+        budget: $budget
+        description: $description
+        phone: $phone
+        howDidYouHearAboutUs: $howDidYouHearAboutUs
+      }
+    ) {
+      id
+    }
+  }
+`;
+
 const CustomeButton = styled(Button)`
   display: block;
   background: ${({ theme }) => theme.showcaseText};
@@ -92,12 +107,15 @@ const Container = styled.div`
 const Contacts = () => {
   const [form] = Form.useForm();
 
-  const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
+  const [createForm, { data, loading, error }] =
+    useMutation(CREATE_CONTACT_FORM);
+
+  const onFinish = async (values: any) => {
+    const res = await createForm({ variables: values });
   };
 
   return (
-    <>
+    <React.Fragment>
       <Meta name='Contacts' path='/contacts' />
       <PageHeading title={headingContent.title} text={headingContent.text} />
       <Container>
@@ -111,6 +129,7 @@ const Contacts = () => {
         </EmailContainer>
         <Divider> OR</Divider>
         <CustomeTitle level={3}>Fill in our contact form</CustomeTitle>
+
         <CustomeForm
           {...formItemLayout}
           form={form}
@@ -121,26 +140,29 @@ const Contacts = () => {
           onFinish={onFinish}
           scrollToFirstError
         >
+          <div>
+            {/* If no error then clean the form and reset form fields */}
+          </div>
           <Form.Item
-            name='what_can_we_help_you_with'
+            name='description'
             label='What can we help you with?'
             rules={[{ required: true, message: "This field is required" }]}
           >
             <Input.TextArea showCount maxLength={200} />
           </Form.Item>
           <Form.Item
-            name='what_is_your_budget'
+            name='budget'
             label='What is your budget? (US Dollars)'
             rules={[{ required: true, message: "Please select your budget" }]}
           >
             <Select placeholder='Select your budget'>
-              <Option value='budget_one_thousand_to_ten_thousand'>
+              <Option value='ONE_THOUSAND_TO_TEN_THOUSAND'>
                 1,000 to 10,000
               </Option>
-              <Option value='budget_ten_thousand_to_fifty_thousand'>
+              <Option value='TEN_THOUSAND_TO_FIFTY_THOUSAND'>
                 10,000 to 50,000
               </Option>
-              <Option value='budget_more_than_fifty_thousand'>50,000 ++</Option>
+              <Option value='MORE_THAN_FIFTY_THOUSAND'>50,000 ++</Option>
             </Select>
           </Form.Item>
           <Form.Item
@@ -156,13 +178,7 @@ const Contacts = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item
-            name='phone'
-            label='Phone Number'
-            rules={[
-              { required: true, message: "Please input your phone number!" },
-            ]}
-          >
+          <Form.Item name='phone' label='Phone Number'>
             <Input style={{ width: "100%" }} />
           </Form.Item>
           <Form.Item
@@ -182,7 +198,7 @@ const Contacts = () => {
             <Input />
           </Form.Item>
           <Form.Item
-            name='how_did_you_hear_bluecit'
+            name='howDidYouHearAboutUs'
             label='How did you hear about BlueCIT?'
           >
             <Input.TextArea showCount maxLength={200} />
@@ -192,7 +208,7 @@ const Contacts = () => {
           </CustomeButton>
         </CustomeForm>
       </Container>
-    </>
+    </React.Fragment>
   );
 };
 

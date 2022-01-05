@@ -7,6 +7,7 @@ import withData from "../utils/withData";
 import { GlobalStyles } from "styles/ThemeConfig";
 import SEO from "../next-seo.config";
 import "antd/dist/antd.css";
+import { ApolloProvider } from "@apollo/client";
 // import "@/styles/antd.less";
 
 const toggleIconStyle = {
@@ -15,7 +16,11 @@ const toggleIconStyle = {
   right: 20,
   zIndex: 100,
 };
-function MyApp({ Component, pageProps }: AppProps) {
+
+interface ApolloProps {
+  apollo: any;
+}
+function MyApp({ Component, pageProps, apollo }: AppProps & ApolloProps) {
   const [isMounted, setIsMounted] = React.useState(false);
   React.useEffect(() => {
     setIsMounted(true);
@@ -26,13 +31,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <ToggleThemeStateProvider>
-      <DefaultSeo {...SEO} />
-      <GlobalStyles />
-      <Page>
-        <Component {...pageProps} />
-      </Page>
-    </ToggleThemeStateProvider>
+    <ApolloProvider client={apollo}>
+      <ToggleThemeStateProvider>
+        <DefaultSeo {...SEO} />
+        <GlobalStyles />
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      </ToggleThemeStateProvider>
+    </ApolloProvider>
   );
 }
 

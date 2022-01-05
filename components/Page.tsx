@@ -8,7 +8,7 @@ import Meta from "./Meta";
 const Page: React.FC<{ children: any }> = ({ children }) => {
   return (
     <>
-      <Meta name='Home' path='/' />
+     
       <Header />
       {children}
       <Footer />
